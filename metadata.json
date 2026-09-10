@@ -1,0 +1,6 @@
+{
+  "name": "Blue Tree Premium Manaus - Links & Guia de Manaus",
+  "description": "Agregador oficial de links, conexão Wi-Fi direta, avaliações e mini guia de lugares a visitar em Manaus do Blue Tree Premium Manaus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
