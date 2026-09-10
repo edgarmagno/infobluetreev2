@@ -5,7 +5,7 @@ export interface LinkItem {
   title: Record<Language, string>;
   subtitle: Record<Language, string>;
   url?: string;
-  actionType: 'external_link' | 'modal_wifi' | 'modal_info';
+  actionType: 'external_link' | 'modal_wifi' | 'modal_info' | 'info_only';
   badge?: Record<Language, string>;
   isHighlight?: boolean;
   iconName: string;

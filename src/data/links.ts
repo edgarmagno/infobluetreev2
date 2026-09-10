@@ -4,7 +4,7 @@ export const hotelDetails: HotelDetails = {
   name: 'Blue Tree Premium Manaus',
   rating: 4.8,
   category: 'TripAdvisor & Google',
-  address: 'Av. Umberto Calderaro Filho, 455',
+  address: 'Av. Umberto Calderaro Filho, 817',
   neighborhood: 'Adrianópolis',
   city: 'Manaus',
   state: 'AM',
@@ -48,24 +48,24 @@ export const linkItems: LinkItem[] = [
     iconName: 'Sparkles',
   },
 
-  // 2. Wi-Fi Direto (botão clicável direto para Blue Tree responsivo iOS e Android)
+  // 2. Wi-Fi Informativo (sem clique, apenas texto)
   {
     id: 'wifi-access',
     title: {
-      pt: 'Conectar ao Wi-Fi (Rede Blue Tree)',
-      en: 'Connect to Wi-Fi (Network Blue Tree)',
-      es: 'Conectar al Wi-Fi (Red Blue Tree)',
+      pt: 'Rede Wi-Fi: Blue Tree',
+      en: 'Wi-Fi Network: Blue Tree',
+      es: 'Red Wi-Fi: Blue Tree',
     },
     subtitle: {
-      pt: 'Clique para conectar direto • Sem senha • Redirecionamento automático',
-      en: 'Tap to connect directly • No password required • Automatic login redirect',
-      es: 'Toque para conectar directo • Sin contraseña • Redirección automática',
+      pt: 'Sem senha • Conecte na rede Blue Tree e confirme o acesso no navegador',
+      en: 'No password • Connect to Blue Tree network and validate access in browser',
+      es: 'Sin contraseña • Conéctese a la red Blue Tree y confirme el acceso en el navegador',
     },
-    actionType: 'modal_wifi',
+    actionType: 'info_only',
     badge: {
-      pt: '1-Toque',
-      en: '1-Tap',
-      es: '1-Toque',
+      pt: 'Sem Senha',
+      en: 'No Password',
+      es: 'Sin Clave',
     },
     iconName: 'Wifi',
   },

@@ -49,18 +49,21 @@ export const LinkCard: React.FC<LinkCardProps> = ({
   };
 
   const isModalAction = item.actionType === 'modal_wifi';
+  const isInfoOnly = item.actionType === 'info_only';
   const title = item.title[currentLang];
   const subtitle = item.subtitle[currentLang];
   const badge = item.badge ? item.badge[currentLang] : null;
 
   const cardContent = (
     <div
-      className={`relative w-full overflow-hidden rounded-2xl p-3.5 sm:p-4 transition-all duration-200 flex items-center gap-3.5 group cursor-pointer ${
+      className={`relative w-full overflow-hidden rounded-2xl p-3.5 sm:p-4 transition-all duration-200 flex items-center gap-3.5 ${
         item.isHighlight
-          ? 'bg-gradient-to-r from-blue-900 to-[#0c2662] text-white shadow-md hover:shadow-lg border border-blue-800'
+          ? 'bg-gradient-to-r from-blue-900 to-[#0c2662] text-white shadow-md hover:shadow-lg border border-blue-800 cursor-pointer group'
+          : isInfoOnly
+          ? 'bg-white text-slate-800 border border-slate-200/90 shadow-2xs cursor-default'
           : isModalAction
-          ? 'bg-white text-slate-800 border-2 border-blue-200/90 hover:border-[#0c2662] hover:shadow-md shadow-xs'
-          : 'bg-white text-slate-800 border border-slate-200/90 hover:border-blue-300 hover:shadow-md shadow-xs'
+          ? 'bg-white text-slate-800 border-2 border-blue-200/90 hover:border-[#0c2662] hover:shadow-md shadow-xs cursor-pointer group'
+          : 'bg-white text-slate-800 border border-slate-200/90 hover:border-blue-300 hover:shadow-md shadow-xs cursor-pointer group'
       }`}
     >
       {/* Left Icon or Thumbnail */}
@@ -78,9 +81,11 @@ export const LinkCard: React.FC<LinkCardProps> = ({
           </div>
         ) : (
           <div
-            className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 ${
+            className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-transform ${
               item.isHighlight
                 ? 'bg-amber-400 text-slate-950 shadow-xs'
+                : isInfoOnly
+                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/80'
                 : isModalAction
                 ? 'bg-blue-100/90 text-[#0c2662] border border-blue-200 group-hover:bg-[#0c2662] group-hover:text-white'
                 : 'bg-blue-50 text-[#0c2662] border border-blue-100 group-hover:bg-[#0c2662] group-hover:text-white'
@@ -96,7 +101,7 @@ export const LinkCard: React.FC<LinkCardProps> = ({
         <div className="flex items-center gap-2 flex-wrap mb-0.5">
           <h2
             className={`text-sm sm:text-base font-bold tracking-tight leading-snug ${
-              item.isHighlight ? 'text-white' : 'text-slate-900 group-hover:text-[#0c2662]'
+              item.isHighlight ? 'text-white' : 'text-slate-900'
             }`}
           >
             {title}
@@ -106,6 +111,8 @@ export const LinkCard: React.FC<LinkCardProps> = ({
               className={`inline-block text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md ${
                 item.isHighlight
                   ? 'bg-amber-400 text-slate-950'
+                  : isInfoOnly
+                  ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
                   : isModalAction
                   ? 'bg-[#0c2662] text-white'
                   : 'bg-blue-50 text-[#0c2662] border border-blue-200'
@@ -132,26 +139,40 @@ export const LinkCard: React.FC<LinkCardProps> = ({
         )}
       </div>
 
-      {/* Right Indicator Icon */}
+      {/* Right Indicator Icon or Status */}
       <div className="shrink-0 flex items-center justify-center">
-        <div
-          className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all ${
-            item.isHighlight
-              ? 'bg-white/20 text-white group-hover:bg-white group-hover:text-[#0c2662]'
-              : isModalAction
-              ? 'bg-blue-50 text-[#0c2662] group-hover:bg-[#0c2662] group-hover:text-white'
-              : 'bg-slate-50 text-slate-400 group-hover:bg-[#0c2662] group-hover:text-white'
-          }`}
-        >
-          {isModalAction ? (
-            <ChevronRight className="w-4 h-4" />
-          ) : (
-            <ExternalLink className="w-3.5 h-3.5" />
-          )}
-        </div>
+        {isInfoOnly ? (
+          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/80 px-2 py-1 rounded-lg select-none">
+            {currentLang === 'pt' ? 'Rede Aberta' : currentLang === 'es' ? 'Red Abierta' : 'Open Network'}
+          </span>
+        ) : (
+          <div
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all ${
+              item.isHighlight
+                ? 'bg-white/20 text-white group-hover:bg-white group-hover:text-[#0c2662]'
+                : isModalAction
+                ? 'bg-blue-50 text-[#0c2662] group-hover:bg-[#0c2662] group-hover:text-white'
+                : 'bg-slate-50 text-slate-400 group-hover:bg-[#0c2662] group-hover:text-white'
+            }`}
+          >
+            {isModalAction ? (
+              <ChevronRight className="w-4 h-4" />
+            ) : (
+              <ExternalLink className="w-3.5 h-3.5" />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
+
+  if (isInfoOnly) {
+    return (
+      <div id={`link-card-${item.id}`} className="w-full">
+        {cardContent}
+      </div>
+    );
+  }
 
   if (isModalAction) {
     return (
