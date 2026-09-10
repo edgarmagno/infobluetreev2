@@ -117,7 +117,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
         ? 'Conectar Wi-Fi no iPhone / iPad'
         : isAndroid
         ? 'Conectar Wi-Fi no Android'
-        : 'Conectar à Rede bluetree',
+        : `Conectar à Rede ${ssid}`,
       directSubtext: isIOS
         ? 'Baixa o perfil seguro para conectar com 1 clique'
         : isAndroid
@@ -129,7 +129,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
       qrLabel: 'Ou aponte a câmera do celular para conectar:',
       noPasswordNotice: 'Rede sem senha • Login automático',
       instructions:
-        'A rede "bluetree" não requer senha. Ao conectar, seu aparelho abrirá diretamente a página de login do hotel para confirmar o acesso.',
+        `A rede "${ssid}" não requer senha. Ao conectar, seu aparelho abrirá diretamente a página de login do hotel para confirmar o acesso.`,
       close: 'Fechar',
     },
     en: {
@@ -139,7 +139,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
         ? 'Connect Wi-Fi on iPhone / iPad'
         : isAndroid
         ? 'Connect Wi-Fi on Android'
-        : 'Connect to bluetree Network',
+        : `Connect to ${ssid} Network`,
       directSubtext: isIOS
         ? 'Downloads verified profile to connect in 1 click'
         : isAndroid
@@ -151,7 +151,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
       qrLabel: 'Or scan with your phone camera:',
       noPasswordNotice: 'Open network • Automatic login portal',
       instructions:
-        'The "bluetree" network does not require a password. Upon connection, your device will automatically open the captive portal to validate access.',
+        `The "${ssid}" network does not require a password. Upon connection, your device will automatically open the captive portal to validate access.`,
       close: 'Close',
     },
     es: {
@@ -161,7 +161,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
         ? 'Conectar Wi-Fi en iPhone / iPad'
         : isAndroid
         ? 'Conectar Wi-Fi en Android'
-        : 'Conectar a la Red bluetree',
+        : `Conectar a la Red ${ssid}`,
       directSubtext: isIOS
         ? 'Descarga perfil seguro para conectar en 1 clic'
         : isAndroid
@@ -173,7 +173,7 @@ export const WifiModal: React.FC<WifiModalProps> = ({
       qrLabel: 'O escanee con la cámara de su móvil:',
       noPasswordNotice: 'Red abierta • Portal de acceso automático',
       instructions:
-        'La red "bluetree" no requiere contraseña. Al conectarse, su dispositivo abrirá la pantalla de bienvenida para validar su acceso.',
+        `La red "${ssid}" no requiere contraseña. Al conectarse, su dispositivo abrirá la pantalla de bienvenida para validar su acceso.`,
       close: 'Cerrar',
     },
   };

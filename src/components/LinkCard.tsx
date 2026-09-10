@@ -66,12 +66,14 @@ export const LinkCard: React.FC<LinkCardProps> = ({
       {/* Left Icon or Thumbnail */}
       <div className="shrink-0 relative">
         {item.thumbnailUrl ? (
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-xl overflow-hidden border border-slate-200 shadow-xs group-hover:scale-105 transition-transform">
+          <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-xl overflow-hidden border border-slate-200/90 bg-white p-1.5 shadow-2xs group-hover:scale-105 transition-transform flex items-center justify-center">
             <img
               src={item.thumbnailUrl}
               alt={title}
               referrerPolicy="no-referrer"
-              className="w-full h-full object-cover"
+              className={`w-full h-full ${
+                item.id === 'agenda-cultural' ? 'object-cover rounded-lg' : 'object-contain'
+              }`}
             />
           </div>
         ) : (

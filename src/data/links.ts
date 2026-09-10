@@ -14,7 +14,7 @@ export const hotelDetails: HotelDetails = {
   email: 'recepcao1.manaus@bluetree.com.br',
   bookingUrl: 'https://www.bluetree.com.br/hotel/blue-tree-premium-manaus/',
   instagramUrl: 'https://www.instagram.com/bluetreehotels/',
-  wifiSsid: 'bluetree',
+  wifiSsid: 'Blue Tree',
   checkIn: '14:00',
   checkOut: '12:00',
   breakfastHoursWeekdays: '06:00 às 10:00',
@@ -48,13 +48,13 @@ export const linkItems: LinkItem[] = [
     iconName: 'Sparkles',
   },
 
-  // 2. Wi-Fi Direto (botão clicável direto para bluetree responsivo iOS e Android)
+  // 2. Wi-Fi Direto (botão clicável direto para Blue Tree responsivo iOS e Android)
   {
     id: 'wifi-access',
     title: {
-      pt: 'Conectar ao Wi-Fi (Rede bluetree)',
-      en: 'Connect to Wi-Fi (Network bluetree)',
-      es: 'Conectar al Wi-Fi (Red bluetree)',
+      pt: 'Conectar ao Wi-Fi (Rede Blue Tree)',
+      en: 'Connect to Wi-Fi (Network Blue Tree)',
+      es: 'Conectar al Wi-Fi (Red Blue Tree)',
     },
     subtitle: {
       pt: 'Clique para conectar direto • Sem senha • Redirecionamento automático',
@@ -104,7 +104,8 @@ export const linkItems: LinkItem[] = [
     },
     url: 'https://g.page/r/CSf-qZaJXYZCEBM/review',
     actionType: 'external_link',
-    iconName: 'Star',
+    iconName: 'Google',
+    thumbnailUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/3840px-Google_%22G%22_logo.svg.png',
   },
 
   // 5. Avaliação no TripAdvisor
@@ -122,6 +123,7 @@ export const linkItems: LinkItem[] = [
     },
     url: 'https://www.tripadvisor.com.br/UserReviewEdit-g303235-d1830539-Blue_Tree_Premium_Manaus-Manaus_Amazon_River_State_of_Amazonas.html',
     actionType: 'external_link',
-    iconName: 'Award',
+    iconName: 'TripAdvisor',
+    thumbnailUrl: 'https://static.tacdn.com/img2/brand_refresh_2025/logos/logo.svg',
   },
 ];
